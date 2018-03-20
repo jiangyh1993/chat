@@ -3,6 +3,7 @@
   "version": "0.0.1",
   "description": "my first socket.io app",
   "dependencies": {
+    "angular": "^1.6.9",
     "express": "^4.15.2",
     "socket.io": "^2.0.4"
   },
@@ -11,6 +12,7 @@
     "gulp-jshint": "^2.1.0",
     "gulp-livereload": "^3.8.1",
     "jshint": "^2.9.5",
-    "jshint-stylish": "^2.2.1"
+    "jshint-stylish": "^2.2.1",
+    "nodemon": "^1.17.2"
   }
 }
