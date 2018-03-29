@@ -4,6 +4,9 @@
   "description": "my first socket.io app",
   "dependencies": {
     "angular": "^1.6.9",
+    "angular-animate": "^1.6.9",
+    "angular-aria": "^1.6.9",
+    "angular-messages": "^1.6.9",
     "express": "^4.15.2",
     "socket.io": "^2.0.4"
   },

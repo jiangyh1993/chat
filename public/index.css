@@ -1,0 +1,75 @@
+html,body {
+	height:100%;
+}
+
+.container, .row {
+	height:100%;
+}
+
+.flex-row, .flex-row > div[class*='col-'] {  
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    flex:0 auto;
+    height:100%;
+}
+
+.flex-col {
+    display: flex;
+    display: -webkit-flex;
+    flex: 1;
+	flex-flow: column nowrap;
+}
+
+.flex-grow {
+	display: flex;
+    -webkit-flex: 2;
+    flex: 2;
+}
+
+ul {
+    list-style: none;
+}
+
+.msg-text {
+    display: inline-block;
+    position: relative;
+    padding: 0 10px;
+    max-width: calc(100% - 40px);
+    min-height: 30px;
+    line-height: 2.5;
+    font-size: 9pt;
+    text-align: left;
+    word-break: break-all;
+    background-color: white;
+    border-radius: 4px;
+}
+
+.msg-time {
+    margin: 7px 0;
+    text-align: center;
+}
+
+.msg-time>span {
+    display: inline-block;
+    padding: 0 18px;
+    font-size: 9pt;
+    color: #fff;
+    border-radius: 2px;
+    background-color: #dcdcdc;
+}
+
+.avatar {
+    float: left;
+    margin: 0 10px 0 0;
+    border-radius: 3px;
+}
+
+ul {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+

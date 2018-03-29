@@ -11,4 +11,8 @@ var server = app.listen(3000, function() {
 var io = socket(server);
 io.on('connection', function(socket) {
     console.log('connection start', socket.id);
+
+    socket.on('chat', function(data) {
+        io.sockets.emit('chat', data);
+    });
 });
