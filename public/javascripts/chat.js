@@ -8,6 +8,7 @@ var app = angular.module('chatApp', ['ngMaterial']);
 		},{
 			name:'234'
 		}];
+		$scope.msg = '';
 
 		$scope.sendMessage = function() {
 			socket.emit('chat', {
@@ -18,7 +19,8 @@ var app = angular.module('chatApp', ['ngMaterial']);
 		socket.on('chat', function(data) {
 			console.log(data);
 			var msgBody = document.getElementsByClassName('msgBody');
-			angular.element(msgBody).append($compile('<msg-content msg="' + $scope.msg +'"></msg-content>')($scope));
+			angular.element(msgBody).append($compile('<msg-content msg="' + data.message +'"></msg-content>')($scope));
+			data.message = ''
 
 		});
 		console.log($scope.names);
@@ -29,7 +31,7 @@ var app = angular.module('chatApp', ['ngMaterial']);
 			restrict: 'E',
 			templateUrl: 'messageContent.html',
 			scope: {
-				message: '=msg'
+				msg: '@'
 			}
 		};
 	});
