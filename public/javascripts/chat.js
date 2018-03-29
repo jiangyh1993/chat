@@ -1,4 +1,4 @@
-var app = angular.module('chatApp', ['ngMaterial']);
+var app = angular.module('chatApp', ['ngMaterial','luegg.directives']);
 (function() {
 	'use strict';
 	app.controller('chatController', ['$scope','$compile', function($scope, $compile) {
@@ -20,7 +20,7 @@ var app = angular.module('chatApp', ['ngMaterial']);
 			console.log(data);
 			var msgBody = document.getElementsByClassName('msgBody');
 			angular.element(msgBody).append($compile('<msg-content msg="' + data.message +'"></msg-content>')($scope));
-			data.message = ''
+			data.message = '';
 
 		});
 		console.log($scope.names);
