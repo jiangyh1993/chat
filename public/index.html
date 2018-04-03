@@ -72,7 +72,7 @@
                     <img src="images/file.png" style="width: 30px;">
                   </a>
                 </div>
-                <input type="text" class="font-control" placeholder="please input message" ng-model="msg" style="height: 45px; width: 93%">
+                <input type="text" class="font-control" placeholder="please input message" ng-model="msg" style="height: 45px; width: 93%" ng-keydown="($event.ctrlKey && $event.which == 13)? sendMessage() : ''">
                 <span>
                   <button type="button" class="btn btn-primary" ng-click="sendMessage()">Send</button>
                 </span>

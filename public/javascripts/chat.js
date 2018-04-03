@@ -21,9 +21,8 @@ var app = angular.module('chatApp', ['ngMaterial','luegg.directives']);
 			var msgBody = document.getElementsByClassName('msgBody');
 			angular.element(msgBody).append($compile('<msg-content msg="' + data.message +'"></msg-content>')($scope));
 			data.message = '';
-
+			$scope.msg = '';
 		});
-		console.log($scope.names);
 	}]);
 
 	app.directive('msgContent', function() {
