@@ -2,6 +2,7 @@ var User = require('../models/user');
 
 
 module.exports = function (router) {
+    //user register
     router.post('/users', function(req, res) {
         var user = new User();
         user.name = req.body.name;
@@ -19,6 +20,26 @@ module.exports = function (router) {
                 }
             });
         }
+    });
+
+
+    //user login
+    router.post('/auth', function(req, res) {
+        User.findOne({uname: req.body.name}).select('name password').exec(function(err, user){
+            if (err) throw err;
+            if (!user) {
+                res.json({success: false, message: 'could not auth user'});
+            }
+            else if (user) {
+                var validPassword = user.comparePassword(req.body.password);
+                if (!validPassword) {
+                    res.json({success: false, message: 'could not auth password'});
+                }
+                else {
+                    res.json({success: true, message: 'auth success'});
+                }
+            }
+        })
     });
     return router;
 }

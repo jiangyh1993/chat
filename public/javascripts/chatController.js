@@ -1,13 +1,8 @@
-var app = angular.module('chatApp', ['ngMaterial','luegg.directives']);
+var app = angular.module('chatApp', ['ngMaterial','luegg.directives', 'ui.router']);
 (function() {
 	'use strict';
 	app.controller('chatController', ['$scope','$compile', function($scope, $compile) {
 		var socket = io.connect('http://localhost:3000');
-		$scope.names = [{
-			name: '123'
-		},{
-			name:'234'
-		}];
 		$scope.msg = '';
 
 		$scope.sendMessage = function() {

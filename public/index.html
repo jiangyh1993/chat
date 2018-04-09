@@ -1,7 +1,8 @@
 <!DOCTYPE html>
-<html ng-app="chatApp">
+<html>
   <head>
     <title>Socket.IO chat</title>
+    <base href="/">
     <link rel="stylesheet" type="text/css" href="libs/css/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="libs/css/bootstrap-theme.css">
     <link rel="stylesheet" type="text/css" href="libs/css/angular-material.css">
@@ -15,72 +16,37 @@
     <script type="text/javascript" src="libs/angular-aria.min.js"></script>
     <script type="text/javascript" src="libs/angular-messages.min.js"></script>
     <script type="text/javascript" src="libs/angular-material.js"></script>
+    <script type="text/javascript" src="libs/angular-ui-router.min.js"></script>
     <script type="text/javascript" src="libs/scrollglue.js"></script>
 
-    <script type="text/javascript" src="javascripts/chat.js"></script>
-    <!-- <script type="text/javascript" src="javascripts/chatFactory.js"></script> -->
+    <script type="text/javascript" src="javascripts/chatController.js"></script>
+    <script type="text/javascript" src="javascripts/chatFactory.js"></script>
+
   </head>
-  <body>
-    <div ng-controller="chatController" class="container" style="width: 100%;">
-      <div class="row flex-row">
-        <div class="col-sm-3">
-          <div class="panel panel-primary flex-col">
-            <div class="panel-heading">
-              <span class="glyphicon glyphicon-user">&nbsp<span>online</span></span>
-            </div>
-            <div class="panel-body flex-grow">
-              <md-list flex>
-                <md-list-item class="md-1-line" ng-click="null" ng-repeat="name in names">
-                  <div class="md-list-item-text" layout="column">
-                    <h4>{{name.name}}</h4>
-                  </div>
-                </md-list-item>
-              </md-list>             
-            </div>
-            <div class="panel-footer" style="text-align: center;">
-              <div class="btn-group">
-                <button type="button" class="btn btn-primary"><span class="glyphicon glyphicon-home"></span></button>
-                <button type="button" class="btn btn-primary"><span class="glyphicon glyphicon-user"></span></button>
-                <button type="button" class="btn btn-primary"><span class="glyphicon glyphicon-film"></span></button>
-                <button type="button" class="btn btn-primary"><span class="glyphicon glyphicon-music"></span></button>
-                <button type="button" class="btn btn-primary"><span class="glyphicon glyphicon-heart"></span></button>
-                <button type="button" class="btn btn-primary"><span class="glyphicon glyphicon-envelope"></span></button>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-sm-9">
-          <div class="panel panel-primary flex-col">
-            <div class="panel-heading">
-              <span class="glyphicon glyphicon-comment"></span>
-              <span>Chat Room</span>
-              <span style="float: right;">chating with ...</span>
-            </div>
-            <div class="panel-body flex-grow" style="background-color: #eee">
-              <ul class="msgBody" scroll-glue>
-              </ul>
-            </div>
-            <div class="panel-footer">
-              <div class="input-group">
-                <div class="input-group-addon">
-                  <a href="#">
-                    <img src="images/emoji.png" style="width: 30px;">
-                  </a>
-                </div>
-                <div class="input-group-addon">
-                  <a href="#">
-                    <img src="images/file.png" style="width: 30px;">
-                  </a>
-                </div>
-                <input type="text" class="font-control" placeholder="please input message" ng-model="msg" style="height: 45px; width: 93%" ng-keydown="($event.ctrlKey && $event.which == 13)? sendMessage() : ''">
-                <span>
-                  <button type="button" class="btn btn-primary" ng-click="sendMessage()">Send</button>
-                </span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+  <body ng-app="chatApp">
+    <nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">CHAT</a>
     </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li><a href="/">Home</a></li>
+        <li><a href="/login">Login</a></li>
+        <li><a href="/chat">Chat Room</a></li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+    <ui-view></ui-view>
   </body>
 </html>
