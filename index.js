@@ -10,7 +10,7 @@ var bodyParser = require('body-parser');
 var router = express.Router();
 var appRoutes = require('./routes/api')(router);
 
-var c;
+var bc;
 
 app.use(morgan('dev'));
 app.use(bodyParser.json());
