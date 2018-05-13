@@ -12,6 +12,7 @@ var appRoutes = require('./routes/api')(router);
 
 var bc;
 var d;
+var f;
 
 app.use(morgan('dev'));
 app.use(bodyParser.json());
