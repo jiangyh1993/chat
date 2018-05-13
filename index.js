@@ -11,6 +11,7 @@ var router = express.Router();
 var appRoutes = require('./routes/api')(router);
 
 var bc;
+var d;
 
 app.use(morgan('dev'));
 app.use(bodyParser.json());
